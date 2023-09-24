@@ -1,0 +1,13 @@
+query Followers($login: String!, $last: Int!) {
+  user(login: $login) {
+    followers(last: $last) {
+      totalCount
+      nodes {
+        id
+        avatarUrl
+        url
+        login
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+query Search(
+  $first: Int
+  $query: String!
+  $type: SearchType!
+) {
+  search(first: $first, query: $query, type: $type) {
+    edges {
+      node {
+        ... on User {
+          id
+          name
+          login
+          status {
+            emoji
+            message
+          }
+          avatarUrl(size: 100)
+        }
+      }
+    }
+  }
+}
